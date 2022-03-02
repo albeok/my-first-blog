@@ -8,20 +8,12 @@
             <h1><a href="/">Blog di Alberto</a></h1>
         </header>
 
+        {% for post in posts %}
         <article>
-            <time>pubblicato: 01.03.2022, 20:45</time>
-            <h2><a href="">Il mio primo post</a></h2>
-            <p>Aenean eu leo quam Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi
-                porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-                ut fermentum massa justo sit amet risus.</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
-        <article>
-            <time>pubblicato: 01.03.2022, 20:55</time>
-            <h2><a href="">Il mio secondo post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
-                tortor mauris condimentum nibh, ut f.</p>
-        </article>
+        {% endfor %}
     </body>
 </html>
